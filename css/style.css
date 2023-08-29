@@ -1,80 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
 }
-body{
-    overflow: hidden;
+
+:root {
+    --color-white: #fff;
+    --color-pink: #d12f7a;
+    --color-black: #000000;
+    --color-roxo: #4c137e;
+
 }
-.container{
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#person{
+    height: 100vh;
     width: 100%;
-    min-height: 100vh;
-    background-color: #f3f5f8;
-}
-.img-menu {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #f3f5f8
-}
-nav{
     display: flex;
-    width: 100%;
-    justify-content:space-around;
-    height: 80px;
-    z-index: 111;
+    align-items: center;
+    background: rgb(0, 0, 0);
+}
+
+.person-content{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color-black);
+}
+
+.person-content div h1 {
+    padding: 0px 4px;
+    position: relative;
+    width: fit-content;
+    font-size: 4.5rem;
+    line-height: 6rem;
+    color: transparent;
+    background: var(--color-black);
+    animation: written_text .5s ease forwards;
+}
+
+.person-content div h1:nth-child(1){
+    animation-delay: 1s;
+}
+.person-content div h1:nth-child(2){
+    animation-delay: 2s;
+}
+.person-content div h1:nth-child(3){
+    animation: written_text_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+.person-content div h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0px;
+    height: 100px;
+    background: #d12f7a;
+
+    animation: written_text_box 1s ease;
+}
+
+.person-content div h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+.person-content div h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+.person-content div h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+
+
+
+
+
+@keyframes written_text {
+    100% {
+        color: var(--color-white);
+    }
+}
+@keyframes written_text_name {
+    100% {
+        color: var(--color-roxo);;
+    }
+}
+
+@keyframes written_text_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }       
+}
+
+@keyframes written_text_box {
+    50% {
+        width: 100%;
+        left: 0;
+    } 
     
+    100% {
+        width: 0;
+        left: 100%;
+    }
 }
-.logo{
-    display: flex;
-    font-size: 40px;
-    font-weight: 800;
-    color: #3d535f;
-    letter-spacing: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-b{
-    font-size: 40px;
-    color: #7600ff;
-}
-.navItens{
-    display: flex;
 
-}
-.navItens li{
-    list-style: none;
-    margin: 0 15px;
-
-}
-.navItens a{
-    font-size: 25px;
-    color: #3d535f;
-    letter-spacing: 3px;
-    text-decoration:none;
-    text-transform: capitalize;
-
-}
-.navItens li:hover a{
-    color: #7600ff;
-}
-.navImg{
-    display: flex;
-}
-.navImg{
-    list-style: none;
-    margin: 0 15px;
-
-}
-.navImg a{
-    font-size: 25px;
-    color: #3d535f;
-    letter-spacing: 3px;
-    text-decoration:none;
-    text-transform: capitalize;
-
-}
-.navImg li:hover a{
-    color: #7600ff;
-}
