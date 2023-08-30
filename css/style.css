@@ -87,9 +87,13 @@ body {
     animation-delay: 2.5s;
 }
 
+.person-name {
+    margin-top: 11rem;
+}
+
 .stacks-content {
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     justify-content: center;
 
     flex-direction: column;
@@ -100,7 +104,6 @@ body {
 .stacks-content h3 {
     color: var(--color-white);
     font-size: 1.15rem;
-
     margin-left: 20px;
 }
 
@@ -137,6 +140,82 @@ body {
     cursor: pointer;
 }
 
+.stacks ul li div:hover::after{
+    content: attr(data);
+    position: absolute;
+    top: 50px;
+    left: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--color-white);
+}
+
+.person-background{
+    height: 100vh;
+    width: 50%;
+
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+
+    position: relative;
+    flex-direction: column;
+    background: #fff;
+    background-image: url(../img/Programação.png);
+    background-size: cover;
+    background-position: top center;
+}
+
+.person-background::after{
+    content: "";
+    position: absolute;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    opacity: .7;
+    
+
+    background:
+        linear-gradient(90deg, transparent 30%, var(--color-black))
+        
+        
+}
+
+.wrapper-profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 14px;
+    margin: 20px 15px;
+
+    background:
+        radial-gradient(rgba(0,0,0,15) 60%, transparent 0),
+        radial-gradient(#000 10%, transparent 0),
+        linear-gradient(to top right, #ffa500 0%, #ff1493 100%); 
+    
+    border-radius: 50%; 
+}
+
+.wrapper-profile-photo img{
+    width: 100%;
+    border-radius: 50%; 
+}
+
+
+.links a img {
+    width: 50px;
+    height: 50px;
+
+    margin: 10px;
+    filter: brightness(50%)
+}
 @keyframes written_text {
     100% {
         color: var(--color-white);
